@@ -1,0 +1,22 @@
+{
+  "name": "navi-server",
+  "version": "1.0.0",
+  "description": "The server containing all the necessary services for the Navi application.",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/server.js",
+    "start": "forever src/server.js"
+  },
+  "author": "Akhil Kumar",
+  "license": "ISC",
+  "devDependencies": {
+    "forever": "^2.0.0",
+    "nodemon": "^2.0.2"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongodb": "^3.5.2"
+  }
+}
