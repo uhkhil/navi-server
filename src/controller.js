@@ -1,14 +1,15 @@
 const mongo = require("./db");
 
-const createUserRoute = async route => {
+const createUserRoute = async (source, destination, route) => {
   const response = { status: false };
   try {
     const now = new Date();
-    const label = `${now.toISOString()}`;
+    const label = `${source.name}-${destination.name} ${now.toISOString()}`;
+    const object = { source, destination, route };
     await mongo
       .db()
       .collection("userRoutes")
-      .insertOne({ label, route, createdAt: now });
+      .insertOne({ label, object, createdAt: now });
     response.status = true;
     response.message = "Added the user route successfully.";
   } catch (error) {

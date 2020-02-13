@@ -12,9 +12,9 @@ mongo.connect();
 
 app.post("/user-route", async (req, res) => {
   const body = req.body;
-  const { route } = body;
+  const { source, destination, route } = body;
   // TODO: Validation
-  const result = await controller.createUserRoute(route);
+  const result = await controller.createUserRoute(source, destination, route);
   res.json(result);
 });
 
